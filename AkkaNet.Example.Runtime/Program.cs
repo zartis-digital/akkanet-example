@@ -12,11 +12,11 @@ namespace AkkaNet.Example.Runtime
             var system = ActorSystem.Create("MySystem");
 
             var houseA = system.ActorOf<HouseActor>("houseA");
-            //var houseB = system.ActorOf<HouseActor>("houseB");
-            //var houseC = system.ActorOf<HouseActor>("houseC");
-            //var houseD = system.ActorOf<HouseActor>("houseD");
-            //var houseE = system.ActorOf<HouseActor>("houseE");
-            //var houseF = system.ActorOf<HouseActor>("houseF");
+            var houseB = system.ActorOf<HouseActor>("houseB");
+            var houseC = system.ActorOf<HouseActor>("houseC");
+            var houseD = system.ActorOf<HouseActor>("houseD");
+            var houseE = system.ActorOf<HouseActor>("houseE");
+            var houseF = system.ActorOf<HouseActor>("houseF");
 
             houseA.Tell(new CloseHouse());
             houseA.Tell(new RegisterSensor { Type = SensorType.Gas });
@@ -24,16 +24,16 @@ namespace AkkaNet.Example.Runtime
             houseA.Tell(new RegisterSensor { Type = SensorType.Door });
             houseA.Tell(new RegisterSensor { Type = SensorType.Motion });
 
-            //houseB.Tell(new RegisterSensor { Type = SensorType.Gas });
+            houseB.Tell(new RegisterSensor { Type = SensorType.Gas });
 
-            //houseC.Tell(new RegisterSensor { Type = SensorType.Gas });
-            //houseC.Tell(new RegisterSensor { Type = SensorType.Door });
+            houseC.Tell(new RegisterSensor { Type = SensorType.Gas });
+            houseC.Tell(new RegisterSensor { Type = SensorType.Door });
 
-            //houseD.Tell(new RegisterSensor {Type = SensorType.Gas});
+            houseD.Tell(new RegisterSensor {Type = SensorType.Gas});
 
-            //houseE.Tell(new RegisterSensor { Type = SensorType.Gas });
-            //houseE.Tell(new RegisterSensor { Type = SensorType.Flood });
-            //houseE.Tell(new RegisterSensor { Type = SensorType.Window });
+            houseE.Tell(new RegisterSensor { Type = SensorType.Gas });
+            houseE.Tell(new RegisterSensor { Type = SensorType.Flood });
+            houseE.Tell(new RegisterSensor { Type = SensorType.Window });
 
             Console.ReadKey();
         }
